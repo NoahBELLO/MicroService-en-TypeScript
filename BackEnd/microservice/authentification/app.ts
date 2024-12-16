@@ -1,12 +1,14 @@
 import express, { Application, Request, Response, NextFunction } from 'express';
+import dotenv from 'dotenv';
 import { MongoClient, ServerApiVersion, Collection, Db } from 'mongodb';
 import userRoutes from "./src/userRoutes"
 import userController from "./src/userController";
 
+dotenv.config();
 const app: Application = express();
 const port: number = 3000;
 
-const uri: string = "mongodb+srv://NoahBelloAdmin:AX20052008el@bdd.qcarh.mongodb.net/?retryWrites=true&w=majority&appName=BDD";
+const uri: string = process.env.MONGO_URI_Noah as string;
 
 const client: MongoClient = new MongoClient(uri, {
   serverApi: {
