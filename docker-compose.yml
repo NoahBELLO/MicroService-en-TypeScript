@@ -1,0 +1,27 @@
+services:
+  FrontEnd_React:
+    container_name: FrontEnd_React
+    build: 
+      context: ./FrontEnd
+    volumes: 
+      - ./FrontEnd:/usr/src/app
+    ports:
+      - 4200:4200
+    # networks:
+    #   - microservice
+
+  Microservice_authentification:
+      container_name: Microservice_authentification
+      build: 
+        context: ./BackEnd/microservice/authentification
+      volumes: 
+        - ./BackEnd/microservice/authentification:/usr/src/app
+      ports:
+        - 3000:3000
+      # networks:
+      # - microservice
+
+  # networks:
+  #   microservice:
+  #     driver: bridge
+  #     external: true
