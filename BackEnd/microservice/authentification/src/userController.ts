@@ -1,7 +1,8 @@
+import { Request, Response } from 'express';
 
-// exports.getSalt = async (req, res) => {
+// exports.getSalt = async (req: Request, res: Response) => {
 //     try {
-//         login = req.query.login;
+//         let login = req.query.login;
 //         const salt = await userModel.getSalt(login);
 //         if (salt) {
 //             res.json({ salt });
@@ -40,7 +41,7 @@
 //     }
 
 // }
-import { Request, Response } from 'express';
+
 export default function getUser(req: Request, res: Response): void {
     res.send('User data');
 };

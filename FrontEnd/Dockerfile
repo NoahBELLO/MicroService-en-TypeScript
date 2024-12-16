@@ -2,7 +2,9 @@ FROM node:alpine
 
 WORKDIR /usr/src/app
 
-EXPOSE 4200
+EXPOSE 5173
 
-ENTRYPOINT [ "tail", "-f", "/dev/null" ]
-# ENTRYPOINT [ "npm", "run", "dev" ]
+RUN npm install react react-dom
+
+#ENTRYPOINT [ "tail", "-f", "/dev/null" ]
+CMD [ "npm", "run", "dev" ]
