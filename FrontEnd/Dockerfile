@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 EXPOSE 5173
 
-RUN npm install react react-dom
+RUN npm i
 
 #ENTRYPOINT [ "tail", "-f", "/dev/null" ]
 CMD [ "npm", "run", "dev" ]

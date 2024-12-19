@@ -4,8 +4,7 @@ WORKDIR /usr/src/app
 
 EXPOSE 3000
 
-RUN npm install express mongodb dotenv nodemon typescript @types/node @types/express @types/dotenv ts-node typescript
-RUN npm install -g nodemon 
-RUN npx tsc --init
+RUN npm i
+RUN npm install -g nodemon
 
 ENTRYPOINT [ "nodemon", "app.ts" ]
